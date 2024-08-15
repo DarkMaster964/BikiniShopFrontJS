@@ -197,7 +197,7 @@ const styles = `
         padding-top: 2%;
         min-height: calc(82.5% - 7vw);
         box-sizing: border-box;
-        font-weight: lighter;
+        font-weight: 200;
         line-height: 1.5;
     }
 
