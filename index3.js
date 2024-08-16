@@ -609,7 +609,7 @@ lenaCircle.addEventListener("load", async (e) => {
         };
         const responseMoreDiv = document.createElement('div');
         responseMoreDiv.className = "responseDiv";
-        removeEmptyElements(responseMoreDiv)
+        
         chatArea.append(responseMoreDiv);
         scrollToBottom();
         startLoading(responseMoreDiv)
@@ -617,6 +617,7 @@ lenaCircle.addEventListener("load", async (e) => {
         const recmore = (await ress.json()).response;
         stopLoading(responseMoreDiv)
         responseMoreDiv.innerHTML = recmore.replace(regexp, '');
+        removeEmptyElements(responseMoreDiv)
 
         const matches = recmore.matchAll(regexp);
         for (const match of matches) {
@@ -733,7 +734,7 @@ async function sendMessageAndUpdateChat(){
 
     responseDiv.textContent = '.';
     responseDiv.className = "responseDiv";
-    removeEmptyElements(responseDiv)
+    
     chatArea.appendChild(responseDiv);
     scrollToBottom();
 
@@ -745,6 +746,7 @@ async function sendMessageAndUpdateChat(){
     
     const regexp = /"(https?:\/\/[^\s"]+)"/g;;
     responseDiv.innerHTML = res.text.replace(regexp, '');
+    removeEmptyElements(responseDiv)
     waiting = false;
 
     const matches = res.text.matchAll(regexp);
