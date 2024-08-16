@@ -609,6 +609,7 @@ lenaCircle.addEventListener("load", async (e) => {
         };
         const responseMoreDiv = document.createElement('div');
         responseMoreDiv.className = "responseDiv";
+        removeEmptyElements(responseMoreDiv)
         chatArea.append(responseMoreDiv);
         scrollToBottom();
         startLoading(responseMoreDiv)
@@ -732,7 +733,7 @@ async function sendMessageAndUpdateChat(){
 
     responseDiv.textContent = '.';
     responseDiv.className = "responseDiv";
-
+    removeEmptyElements(responseDiv)
     chatArea.appendChild(responseDiv);
     scrollToBottom();
 
