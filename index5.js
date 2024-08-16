@@ -466,8 +466,10 @@ const html = `
                 <div class="messageArea" id="messageArea">
 
                     <div class="responseDiv">
+                        <p>
                         Dobrodošli u Virtuelnu Prodavnicu!
                         Ja sam AI prodavac. Kako mogu da vam pomognem?
+                        </p>
                     </div>
 
                     
