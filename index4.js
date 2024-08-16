@@ -218,7 +218,10 @@ const styles = `
     .responseDiv {
         max-width: 65%;
         text-align: left;
-        padding: 3%;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-top: 1%;
+        padding-bottom: 1%;
         box-sizing: border-box;
         margin-top: 5%;
         margin-left: 4%;
@@ -539,6 +542,9 @@ function removeEmptyElements(element) {
         // Check if the element is empty or contains only whitespace
         if (!child.innerHTML.trim() && child.children.length === 0) {
             child.remove(); // Remove the empty element
+        }
+        else{
+            removeEmptyElements(child)
         }
     });
 }
