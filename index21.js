@@ -432,7 +432,7 @@ const styles = `
 
     @media (orientation: portrait)  {
         .chat, .botHeaderContainer, .headerGreeting, .introductionParagraph, .messageArea, .inputArea {
-            font-size: 1.03em; /* Adjust this value to increase text size */
+            font-size: 1.1em; /* Adjust this value to increase text size */
         }
 
         .chatContainerFull {
@@ -444,23 +444,11 @@ const styles = `
             font-size: min(4vw, 5vh);
             border-radius: 0; /* Maintain rounded edges */
         }
-        .chatWrapper, .chatContainerFull {
+
+        .chatWrapper {
             display: none; /* Hide by default */
-            position: fixed;
-            justify-content: center;
-            align-items: center;
-            width: 100vw;
-            height: 100vh;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            border-radius: 0;
         }
         
-        .chatWrapper.open, .chatContainerFull.open {
-            display: flex; /* Show when the chat is opened */
-        }
 
         .onlineStatus {
             position: absolute;
@@ -468,7 +456,7 @@ const styles = `
             height: 2vw; /* Make sure it's a circle */
             border-radius: 50%;
             background-color: #27C001;
-            left: 10%; /* Adjust this value to position the dot correctly */
+            left: 50%; /* Adjust this value to position the dot correctly */
             bottom: 5%; /* Adjust this value to position the dot correctly */
             z-index: 2;
         }
