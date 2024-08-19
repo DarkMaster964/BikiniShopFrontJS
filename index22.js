@@ -69,6 +69,7 @@ const styles = `
         width: 100%;
         height: 100%;
     }
+        
 
     .chatBackgroundGradient {
         width: 100%;
@@ -436,6 +437,10 @@ const styles = `
         }
 
         .chatContainerFull {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
             width: 100vw; /* Adjust width for a near fullscreen effect */
             height: 100vh; /* Adjust height for a near fullscreen effect */
             bottom: 0;  /* Center vertically with space around */
@@ -443,10 +448,17 @@ const styles = `
             left: 0; /* Center horizontally with space around */
             font-size: min(4vw, 5vh);
             border-radius: 0; /* Maintain rounded edges */
+            transition: ease-in-out 0.1s;
         }
 
         .chatWrapper {
-            display: none; /* Hide by default */
+            display: none;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
         }
         
 
@@ -471,7 +483,7 @@ const styles = `
             position: absolute;
             width: 10vw; /* Increase the size of the button */
             height: 10vw; /* Maintain square aspect ratio */
-            bottom: 15px; /* Adjust this value to position it slightly above the bottom edge */
+            bottom: 18px; /* Adjust this value to position it slightly above the bottom edge */
             right: 15px; /* Adjust this value to position it slightly to the left of the right edge */
             margin: 0;
             cursor: pointer;
@@ -485,15 +497,6 @@ const styles = `
 
         .sendImg {
             width: 70%; /* Adjust the size of the image inside the button */
-        }
-
-        .chatWrapper {
-            width: 100;
-            height: 100vh;
-            border-radius: 0;
-            display: flex;
-            bottom: 0;  /* Center vertically */
-            right: 0; /* Center horizontally */
         }
 
         .inputArea {
