@@ -430,7 +430,7 @@ const styles = `
         }
     }
 
-    @media (max-width: 760px) {
+    @media (orientation: portrait)  {
         .chatContainerFull {
             width: 100vw; /* Adjust width for a near fullscreen effect */
             height: 100vh; /* Adjust height for a near fullscreen effect */
