@@ -449,7 +449,8 @@ const styles = `
             position: relative;  /* Change to relative for better positioning */
             bottom: 0;  /* Remove the bottom property */
             right: 0;  /* Remove the right property */
-            margin-left: 10px;  /* Add some margin to separate from the input area */
+            margin-left: 2px;  /* Add some margin to separate from the input area */
+            margin-bottom: 4px
             width: 8vw;  /* Maintain the increased size */
             height: 8vw;  /* Maintain the increased size */
         }
@@ -475,9 +476,9 @@ const styles = `
         }
 
            .chatContainerBubble {
-       width: 18vw; /* Increase the width for mobile */
-       height: 18vw; /* Increase the height for mobile */
-   }
+            width: 18vw; /* Increase the width for mobile */
+            height: 18vw; /* Increase the height for mobile */
+        }
 
         .lenaCircle {
             width: 60%; /* Increase the size of the Lena circle */
