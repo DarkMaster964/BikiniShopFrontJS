@@ -433,7 +433,7 @@ const styles = `
 
     @media (orientation: portrait)  {
         .chat, .botHeaderContainer, .headerGreeting, .introductionParagraph, .messageArea, .inputArea {
-            font-size: 1.2em; /* Adjust this value to increase text size */
+            font-size: 0.85em; /* Adjust this value to increase text size */
         }
 
         .chatContainerFull {
@@ -501,7 +501,7 @@ const styles = `
 
         .inputArea {
             height: 10%;  /* Increase the height for better usability */
-            font-size: 1em;  /* Increase font size for better readability */
+            font-size: 0.8em;  /* Increase font size for better readability */
             padding: 8px;  /* Add padding to give more space inside the input box */
         }
 
