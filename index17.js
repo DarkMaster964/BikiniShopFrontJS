@@ -447,7 +447,7 @@ const styles = `
 
         .sendButton {
             position: absolute;  /* Position the button absolutely within the inputDiv */
-            bottom: 10px;  /* Position it slightly above the bottom edge */
+            bottom: 15px;  /* Position it slightly above the bottom edge */
             right: 10px;  /* Position it slightly to the left of the right edge */
             width: 8vw;  /* Increase width for better visibility */
             height: 8vw;  /* Increase height for better visibility */
