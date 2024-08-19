@@ -446,10 +446,9 @@ const styles = `
         }
 
         .sendButton {
-            bottom: 9vw; /* Adjust for mobile */
-            right: 9vw;  /* Adjust for mobile */
-            width: 9vw;
-            height: 9vw;
+            bottom: 5%;  /* Adjust position to align with the larger input area */
+            right: 5%;
+            transform: none;  /* Remove transform for proper positioning */
         }
         
         .chatWrapper {
@@ -462,7 +461,14 @@ const styles = `
         }
 
         .inputArea {
-            height: 6%;
+            height: 20%;  /* Increase the height for better usability */
+            font-size: 1.2em;  /* Increase font size for better readability */
+            padding: 11px;  /* Add padding to give more space inside the input box */
+        }
+
+        .inputDiv {
+            height: auto;  /* Ensure the input div expands to fit content */
+            padding-bottom: 10px;  /* Add padding to create space above the send button */
         }
 
     }
