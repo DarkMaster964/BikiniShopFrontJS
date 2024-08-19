@@ -436,6 +436,7 @@ const styles = `
             height: 90vh; /* Adjust height for a near fullscreen effect */
             bottom: 5vh;  /* Center vertically with space around */
             right: 2.5vw; /* Center horizontally with space around */
+            left: 2.5vw; /* Center horizontally with space around */
             font-size: min(4vw, 5vh);
             border-radius: 3vw; /* Maintain rounded edges */
         }
@@ -445,20 +446,25 @@ const styles = `
         }
 
         .sendButton {
-            bottom: 4vw; /* Adjust for mobile */
-            right: 4vw;  /* Adjust for mobile */
-            width: 4.5vw;
-            height: 4.5vw;
+            bottom: 9vw; /* Adjust for mobile */
+            right: 9vw;  /* Adjust for mobile */
+            width: 9vw;
+            height: 9vw;
         }
         
         .chatWrapper {
             width: 95vw;
             height: 90vh;
-            border-radius: 3vw;
+            border-radius: 4vw;
             display: flex;
             bottom: 5vh;  /* Center vertically */
             right: 2.5vw; /* Center horizontally */
         }
+
+        .inputArea {
+            height: 9vw;
+        }
+
     }
 
 `;
