@@ -443,18 +443,14 @@ const styles = `
         .chat {
             border-radius: 3vw; /* Match border radius with container */
         }
-    }
 
-    @media (max-width: 760px) {
         .sendButton {
             bottom: 4vw; /* Adjust for mobile */
             right: 4vw;  /* Adjust for mobile */
             width: 4.5vw;
             height: 4.5vw;
         }
-    }
-
-    @media (max-width: 760px) {
+        
         .chatWrapper {
             width: 95vw;
             height: 90vh;
@@ -465,15 +461,6 @@ const styles = `
         }
     }
 
-    @media (max-width: 760px) {
-        .chat {
-            padding: 2vw; /* Adjust padding to fit within the new dimensions */
-        }
-
-        .botInfo, .inputDiv {
-            padding: 2vw;
-        }
-    }
 `;
 
 
