@@ -433,7 +433,7 @@ const styles = `
 
     @media (orientation: portrait)  {
         .chat, .botHeaderContainer, .headerGreeting, .introductionParagraph, .messageArea, .inputArea {
-            font-size: 0.85em; /* Adjust this value to increase text size */
+            font-size: 0.861em; /* Adjust this value to increase text size */
         }
 
         .chatContainerFull {
@@ -468,8 +468,8 @@ const styles = `
             height: 2vw; /* Make sure it's a circle */
             border-radius: 50%;
             background-color: #27C001;
-            left: 40%; /* Adjust this value to position the dot correctly */
-            bottom: 3%; /* Adjust this value to position the dot correctly */
+            left: 35%; /* Adjust this value to position the dot correctly */
+            bottom: 1%; /* Adjust this value to position the dot correctly */
             z-index: 2;
         }
 
@@ -484,7 +484,7 @@ const styles = `
             width: 10vw; /* Increase the size of the button */
             height: 10vw; /* Maintain square aspect ratio */
             bottom: 18px; /* Adjust this value to position it slightly above the bottom edge */
-            right: 15px; /* Adjust this value to position it slightly to the left of the right edge */
+            right: 20px; /* Adjust this value to position it slightly to the left of the right edge */
             margin: 0;
             cursor: pointer;
             display: flex;
@@ -500,7 +500,7 @@ const styles = `
         }
 
         .inputArea {
-            height: 10%;  /* Increase the height for better usability */
+            height: 16%;  /* Increase the height for better usability */
             font-size: 0.8em;  /* Increase font size for better readability */
             padding: 8px;  /* Add padding to give more space inside the input box */
         }
@@ -508,6 +508,7 @@ const styles = `
         .inputDiv {
             height: auto;  /* Ensure the input div expands to fit content */
             padding-bottom: 5px;  /* Add padding to create space above the send button */
+            bottom: 15px;
         }
 
         .chatContainerBubble {
