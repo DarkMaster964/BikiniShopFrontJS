@@ -462,7 +462,7 @@ const styles = `
         }
 
         .inputArea {
-            height: 9vw;
+            height: 6%;
         }
 
     }
