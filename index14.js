@@ -446,11 +446,12 @@ const styles = `
         }
 
         .sendButton {
-            bottom: 15%;  /* Adjust position to align with the larger input area */
-            right: 5%;
-            transform: none;  /* Remove transform for proper positioning */
-            width: 8vw;  /* Increased width */
-            height: 8vw;  /* Increased height */
+            position: relative;  /* Change to relative for better positioning */
+            bottom: 0;  /* Remove the bottom property */
+            right: 0;  /* Remove the right property */
+            margin-left: 10px;  /* Add some margin to separate from the input area */
+            width: 8vw;  /* Maintain the increased size */
+            height: 8vw;  /* Maintain the increased size */
         }
         
         .chatWrapper {
@@ -473,8 +474,25 @@ const styles = `
             padding-bottom: 5px;  /* Add padding to create space above the send button */
         }
 
+           .chatContainerBubble {
+       width: 18vw; /* Increase the width for mobile */
+       height: 18vw; /* Increase the height for mobile */
+   }
+
+        .lenaCircle {
+            width: 60%; /* Increase the size of the Lena circle */
+        }
+
+        .blackCircle {
+            width: 65%; /* Adjust the black circle size */
+        }
+
+        .circleGradient {
+            width: 100%; /* Ensure the gradient fits the new size */
+        }
+
         .chatBubble {
-            width: 200%
+            height: 100%; /* Ensure the bubble takes the full height of the container */
         }
 
     }
