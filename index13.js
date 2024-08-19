@@ -474,7 +474,7 @@ const styles = `
         }
 
         .chatBubble {
-            width: 40%
+            width: 200%
         }
 
     }
