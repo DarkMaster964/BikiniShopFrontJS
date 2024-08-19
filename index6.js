@@ -429,6 +429,51 @@ const styles = `
             width: calc(100% - 1px);
         }
     }
+
+    @media (max-width: 760px) {
+        .chatContainerFull {
+            width: 95vw; /* Adjust width for a near fullscreen effect */
+            height: 90vh; /* Adjust height for a near fullscreen effect */
+            bottom: 5vh;  /* Center vertically with space around */
+            right: 2.5vw; /* Center horizontally with space around */
+            font-size: min(4vw, 5vh);
+            border-radius: 3vw; /* Maintain rounded edges */
+        }
+
+        .chat {
+            border-radius: 3vw; /* Match border radius with container */
+        }
+    }
+
+    @media (max-width: 760px) {
+        .sendButton {
+            bottom: 4vw; /* Adjust for mobile */
+            right: 4vw;  /* Adjust for mobile */
+            width: 4.5vw;
+            height: 4.5vw;
+        }
+    }
+
+    @media (max-width: 760px) {
+        .chatWrapper {
+            width: 95vw;
+            height: 90vh;
+            border-radius: 3vw;
+            display: flex;
+            bottom: 5vh;  /* Center vertically */
+            right: 2.5vw; /* Center horizontally */
+        }
+    }
+
+    @media (max-width: 760px) {
+        .chat {
+            padding: 2vw; /* Adjust padding to fit within the new dimensions */
+        }
+
+        .botInfo, .inputDiv {
+            padding: 2vw;
+        }
+    }
 `;
 
 
