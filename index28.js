@@ -535,6 +535,10 @@ const styles = `
 
     }
 
+    body.keyboard {
+        height: calc(100% + 500px); /* add padding for keyboard */
+    }
+
 `;
 
 
@@ -994,14 +998,8 @@ const chatWrapper = document.querySelector('.chatWrapper');
 
 window.addEventListener('resize', () => {
     if (window.innerHeight < screen.height) {
-        // Keyboard is open
-        inputDiv.style.position = 'absolute';
-        inputDiv.style.bottom = '50px'; // Adjust this value to move input field up
-        chatWrapper.style.paddingBottom = '50px'; // Ensure chat content isn't covered by input
+        document.body.classList.add("keyboard");
     } else {
-        // Keyboard is closed
-        inputDiv.style.position = 'fixed';
-        inputDiv.style.bottom = '20px'; // Adjust this value to your default position
-        chatWrapper.style.paddingBottom = '0';
+        document.body.classList.remove("keyboard");
     }
 });
