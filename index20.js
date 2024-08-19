@@ -431,6 +431,10 @@ const styles = `
     }
 
     @media (orientation: portrait)  {
+        .chat, .botHeaderContainer, .headerGreeting, .introductionParagraph, .messageArea, .inputArea {
+            font-size: 1.03em; /* Adjust this value to increase text size */
+        }
+
         .chatContainerFull {
             width: 100vw; /* Adjust width for a near fullscreen effect */
             height: 100vh; /* Adjust height for a near fullscreen effect */
@@ -440,6 +444,34 @@ const styles = `
             font-size: min(4vw, 5vh);
             border-radius: 0; /* Maintain rounded edges */
         }
+        .chatWrapper, .chatContainerFull {
+            display: none; /* Hide by default */
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            border-radius: 0;
+        }
+        
+        .chatWrapper.open, .chatContainerFull.open {
+            display: flex; /* Show when the chat is opened */
+        }
+
+        .onlineStatus {
+            position: absolute;
+            width: 2vw; /* Increase the size of the dot */
+            height: 2vw; /* Make sure it's a circle */
+            border-radius: 50%;
+            background-color: #27C001;
+            left: 10%; /* Adjust this value to position the dot correctly */
+            bottom: 5%; /* Adjust this value to position the dot correctly */
+            z-index: 2;
+        }
 
         .chat {
             border-radius: 0vw; /* Match border radius with container */
@@ -448,17 +480,23 @@ const styles = `
         }
 
         .sendButton {
-            position: absolute;  /* Position the button absolutely within the inputDiv */
-            bottom: 15px;  /* Position it slightly above the bottom edge */
-            right: 10px;  /* Position it slightly to the left of the right edge */
-            width: 8vw;  /* Increase width for better visibility */
-            height: 8vw;  /* Increase height for better visibility */
-            margin: 0;  /* Remove any margin */
-            transform: none;  /* Ensure proper alignment */
+            position: absolute;
+            width: 10vw; /* Increase the size of the button */
+            height: 10vw; /* Maintain square aspect ratio */
+            bottom: 15px; /* Adjust this value to position it slightly above the bottom edge */
+            right: 15px; /* Adjust this value to position it slightly to the left of the right edge */
+            margin: 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background: linear-gradient(126.82deg, #CE6EE9 14.65%, #007CFB 50.42%, #FFE500 86.19%);
+            border-width: 0;
         }
-        
+
         .sendImg {
-            width: 70%;  /* Adjust image size inside the button (optional) */
+            width: 70%; /* Adjust the size of the image inside the button */
         }
 
         .chatWrapper {
