@@ -446,15 +446,19 @@ const styles = `
         }
 
         .sendButton {
-            position: relative;  /* Change to relative for better positioning */
-            bottom: 0;  /* Remove the bottom property */
-            right: 0;  /* Remove the right property */
-            margin-left: 2px;  /* Add some margin to separate from the input area */
-            margin-bottom: 4px
-            width: 8vw;  /* Maintain the increased size */
-            height: 8vw;  /* Maintain the increased size */
+            position: absolute;  /* Position the button absolutely within the inputDiv */
+            bottom: 10px;  /* Position it slightly above the bottom edge */
+            right: 10px;  /* Position it slightly to the left of the right edge */
+            width: 8vw;  /* Increase width for better visibility */
+            height: 8vw;  /* Increase height for better visibility */
+            margin: 0;  /* Remove any margin */
+            transform: none;  /* Ensure proper alignment */
         }
         
+        .sendImg {
+            width: 70%;  /* Adjust image size inside the button (optional) */
+        }
+
         .chatWrapper {
             width: 95vw;
             height: 90vh;
