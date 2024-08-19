@@ -484,7 +484,7 @@ const styles = `
             width: 10vw; /* Increase the size of the button */
             height: 10vw; /* Maintain square aspect ratio */
             bottom: 18px; /* Adjust this value to position it slightly above the bottom edge */
-            right: 20px; /* Adjust this value to position it slightly to the left of the right edge */
+            right: 25px; /* Adjust this value to position it slightly to the left of the right edge */
             margin: 0;
             cursor: pointer;
             display: flex;
@@ -500,12 +500,13 @@ const styles = `
         }
 
         .inputArea {
-            height: 16%;  /* Increase the height for better usability */
-            font-size: 0.8em;  /* Increase font size for better readability */
+            height: 20%;  /* Increase the height for better usability */
+            font-size: 0.9em;  /* Increase font size for better readability */
             padding: 8px;  /* Add padding to give more space inside the input box */
         }
 
         .inputDiv {
+            position: fixed;
             height: auto;  /* Ensure the input div expands to fit content */
             padding-bottom: 5px;  /* Add padding to create space above the send button */
             bottom: 15px;
@@ -988,3 +989,19 @@ async function extractMetadata(url) {
     }
 }
 
+const inputDiv = document.querySelector('.inputDiv');
+const chatWrapper = document.querySelector('.chatWrapper');
+
+window.addEventListener('resize', () => {
+    if (window.innerHeight < screen.height) {
+        // Keyboard is open
+        inputDiv.style.position = 'absolute';
+        inputDiv.style.bottom = '50px'; // Adjust this value to move input field up
+        chatWrapper.style.paddingBottom = '50px'; // Ensure chat content isn't covered by input
+    } else {
+        // Keyboard is closed
+        inputDiv.style.position = 'fixed';
+        inputDiv.style.bottom = '20px'; // Adjust this value to your default position
+        chatWrapper.style.paddingBottom = '0';
+    }
+});
