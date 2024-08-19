@@ -433,7 +433,7 @@ const styles = `
 
     @media (orientation: portrait)  {
         .chat, .botHeaderContainer, .headerGreeting, .introductionParagraph, .messageArea, .inputArea {
-            font-size: 1.1em; /* Adjust this value to increase text size */
+            font-size: 0.6em; /* Adjust this value to increase text size */
         }
 
         .chatContainerFull {
@@ -468,8 +468,8 @@ const styles = `
             height: 2vw; /* Make sure it's a circle */
             border-radius: 50%;
             background-color: #27C001;
-            left: 50%; /* Adjust this value to position the dot correctly */
-            bottom: 5%; /* Adjust this value to position the dot correctly */
+            left: 40%; /* Adjust this value to position the dot correctly */
+            bottom: 3%; /* Adjust this value to position the dot correctly */
             z-index: 2;
         }
 
@@ -500,8 +500,8 @@ const styles = `
         }
 
         .inputArea {
-            height: 7%;  /* Increase the height for better usability */
-            font-size: 0.65em;  /* Increase font size for better readability */
+            height: 10%;  /* Increase the height for better usability */
+            font-size: 0.6em;  /* Increase font size for better readability */
             padding: 8px;  /* Add padding to give more space inside the input box */
         }
 
@@ -510,7 +510,7 @@ const styles = `
             padding-bottom: 5px;  /* Add padding to create space above the send button */
         }
 
-           .chatContainerBubble {
+        .chatContainerBubble {
             width: 18vw; /* Increase the width for mobile */
             height: 18vw; /* Increase the height for mobile */
         }
