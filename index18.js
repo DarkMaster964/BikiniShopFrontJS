@@ -432,17 +432,19 @@ const styles = `
 
     @media (max-width: 760px) {
         .chatContainerFull {
-            width: 95vw; /* Adjust width for a near fullscreen effect */
-            height: 90vh; /* Adjust height for a near fullscreen effect */
-            bottom: 5vh;  /* Center vertically with space around */
-            right: 2.5vw; /* Center horizontally with space around */
-            left: 2.5vw; /* Center horizontally with space around */
+            width: 100vw; /* Adjust width for a near fullscreen effect */
+            height: 100vh; /* Adjust height for a near fullscreen effect */
+            bottom: 0;  /* Center vertically with space around */
+            right: 0; /* Center horizontally with space around */
+            left: 0; /* Center horizontally with space around */
             font-size: min(4vw, 5vh);
-            border-radius: 3vw; /* Maintain rounded edges */
+            border-radius: 0; /* Maintain rounded edges */
         }
 
         .chat {
-            border-radius: 3vw; /* Match border radius with container */
+            border-radius: 0vw; /* Match border radius with container */
+            height: 100%; /* Added to ensure full height */
+            width: 100%; /* Added to ensure full width */
         }
 
         .sendButton {
@@ -460,12 +462,12 @@ const styles = `
         }
 
         .chatWrapper {
-            width: 95vw;
-            height: 90vh;
-            border-radius: 4vw;
+            width: 100;
+            height: 100vh;
+            border-radius: 0;
             display: flex;
-            bottom: 5vh;  /* Center vertically */
-            right: 2.5vw; /* Center horizontally */
+            bottom: 0;  /* Center vertically */
+            right: 0; /* Center horizontally */
         }
 
         .inputArea {
