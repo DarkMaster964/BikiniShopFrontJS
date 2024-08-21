@@ -432,9 +432,39 @@ const styles = `
     }
 
     @media (orientation: portrait)  {
+
+        .purchaseButton {
+            width: 25%;
+            height: 9vw;
+            background-color: #545454;
+            border-radius: 17px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+        }
+
         .chat, .botHeaderContainer, .headerGreeting, .introductionParagraph, .messageArea, .inputArea {
             font-size: 0.861em; /* Adjust this value to increase text size */
         }
+
+        .messageArea {
+            display: flex;
+            flex-direction: column;
+            color: white;
+            font-family: "Roboto", sans-serif;
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            margin-bottom: 14vw;
+            padding-top: 4%;
+            min-height: calc(82.5% - 14vw);
+            box-sizing: border-box;
+            font-weight: 200;
+            line-height: 1.5;
+        }
+
 
         .chatContainerFull {
             top: 0;
