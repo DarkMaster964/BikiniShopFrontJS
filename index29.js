@@ -437,6 +437,7 @@ const styles = `
         }
 
         .chatContainerFull {
+            top: 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -453,6 +454,7 @@ const styles = `
 
         .chatWrapper {
             display: none;
+            top: 0;
             position: relative;
             justify-content: center;
             align-items: center;
@@ -483,7 +485,7 @@ const styles = `
             position: absolute;
             width: 10vw; /* Increase the size of the button */
             height: 10vw; /* Maintain square aspect ratio */
-            bottom: 18px; /* Adjust this value to position it slightly above the bottom edge */
+            bottom: 25px; /* Adjust this value to position it slightly above the bottom edge */
             right: 25px; /* Adjust this value to position it slightly to the left of the right edge */
             margin: 0;
             cursor: pointer;
@@ -501,7 +503,7 @@ const styles = `
 
         .inputArea {
             height: 20%;  /* Increase the height for better usability */
-            font-size: 0.9em;  /* Increase font size for better readability */
+            font-size: max(16px, 0.9em);  /* Increase font size for better readability */
             padding: 8px;  /* Add padding to give more space inside the input box */
         }
 
