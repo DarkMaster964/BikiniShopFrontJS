@@ -641,23 +641,34 @@ const html = `
 
 
 // Widget component
+// Widget component with Shadow DOM
 class Widget {
     static render() {
-        // Append the styles to the head
-        const styleElement = document.createElement('style');
-        styleElement.textContent = styles;
-        document.head.appendChild(styleElement);
-
-        // Create a container and append the HTML
+        // Create a container for the widget
         const chatContainer = document.createElement('div');
         chatContainer.id = 'chatContainer';
-        chatContainer.className = 'chatContainerBubble';
-        chatContainer.innerHTML = html;
 
-        // Append the container to the body
+        // Attach a shadow DOM to the container
+        const shadow = chatContainer.attachShadow({ mode: 'open' });
+
+        // Append the styles to the shadow DOM
+        const styleElement = document.createElement('style');
+        styleElement.textContent = styles;
+        shadow.appendChild(styleElement);
+
+        // Create an inner container and append the HTML inside the shadow DOM
+        const innerContainer = document.createElement('div');
+        innerContainer.className = 'chatContainerBubble';
+        innerContainer.innerHTML = html;
+        shadow.appendChild(innerContainer);
+
+        // Append the chat container to the body
         document.body.appendChild(chatContainer);
     }
 }
+
+Widget.render();
+
 
 Widget.render();
 
