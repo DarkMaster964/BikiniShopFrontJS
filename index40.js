@@ -26,7 +26,7 @@ const styles = `
         width: 30vw;
         height: min(60vw,95vh);
         transition: ease-in-out 0.1s;
-        z-index: 1000000;
+        z-index: 10000000;
         font-size: min(1.75vw,5vh);
     }
 
@@ -34,7 +34,7 @@ const styles = `
         display: block;
         position: relative;
         width: 100%;
-        z-index: 1000000;
+        z-index: 10000000;
         height: 30%;
     }
 
@@ -498,7 +498,7 @@ const styles = `
             font-size: min(4vw, 5vh);
             border-radius: 0; /* Maintain rounded edges */
             transition: ease-in-out 0.1s;
-            z-index: 1000000;
+            z-index: 10000000;
         }
 
         .chatWrapper {
@@ -582,7 +582,7 @@ const styles = `
 
         .chatBubble {
             height: 100%; /* Ensure the bubble takes the full height of the container */
-            z-index: 1000000;
+            z-index: 10000000;
         }
 
     }
