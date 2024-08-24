@@ -643,19 +643,21 @@ const html = `
 // Widget component
 class Widget {
     static render() {
-        // Append the styles to the head
-        const styleElement = document.createElement('style');
-        styleElement.textContent = styles;
-        document.head.appendChild(styleElement);
 
         // Create a container and append the HTML
         const chatContainer = document.createElement('div');
         chatContainer.id = 'chatContainer';
         chatContainer.className = 'chatContainerBubble';
-        chatContainer.innerHTML = html;
-
-        // Append the container to the body
         document.body.appendChild(chatContainer);
+
+        const sheet = new CSSStyleSheet();
+        sheet.replaceSync(styles);
+
+        const shadow = chatContainer.attachShadow({ mode: "open" })
+        shadow.adoptedStyleSheets = [sheet];
+        shadow.innerHTML = html
+        //chatContainer.innerHTML = html;
+
     }
 }
 
