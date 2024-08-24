@@ -26,7 +26,7 @@ const styles = `
         width: 30vw;
         height: min(60vw,95vh);
         transition: ease-in-out 0.1s;
-        z-index: 100;
+        z-index: 1000000;
         font-size: min(1.75vw,5vh);
     }
 
@@ -34,7 +34,7 @@ const styles = `
         display: block;
         position: relative;
         width: 100%;
-        z-index: 100;
+        z-index: 1000000;
         height: 30%;
     }
 
@@ -475,7 +475,7 @@ const styles = `
             overflow-y: scroll;
             scroll-behavior: smooth;
             scrollbar-width: none;
-            margin-bottom: 14vw;
+            margin-bottom: 40vw;
             padding-top: 4%;
             min-height: calc(82.5% - 14vw);
             box-sizing: border-box;
@@ -498,7 +498,7 @@ const styles = `
             font-size: min(4vw, 5vh);
             border-radius: 0; /* Maintain rounded edges */
             transition: ease-in-out 0.1s;
-            z-index: 100;
+            z-index: 1000000;
         }
 
         .chatWrapper {
@@ -551,7 +551,7 @@ const styles = `
         }
 
         .inputArea {
-            height: 20%;  /* Increase the height for better usability */
+            height: 12vh;  /* Increase the height for better usability */
             font-size: max(16px, 0.9em);  /* Increase font size for better readability */
             padding: 8px;  /* Add padding to give more space inside the input box */
         }
@@ -582,7 +582,7 @@ const styles = `
 
         .chatBubble {
             height: 100%; /* Ensure the bubble takes the full height of the container */
-            z-index: 100;
+            z-index: 1000000;
         }
 
     }
