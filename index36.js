@@ -640,28 +640,31 @@ const html = `
 
 
 
-// Widget component
 class Widget {
     static render() {
-
-        // Create a container and append the HTML
+        // Create a container and attach a shadow root
         const chatContainer = document.createElement('div');
         chatContainer.id = 'chatContainer';
         chatContainer.className = 'chatContainerBubble';
+        const shadowRoot = chatContainer.attachShadow({ mode: 'open' });
+
+        // Append the styles to the shadow root
+        const styleElement = document.createElement('style');
+        styleElement.textContent = styles;
+        shadowRoot.appendChild(styleElement);
+
+        // Append the HTML to the shadow root
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = html;
+        shadowRoot.appendChild(wrapper);
+
+        // Append the container to the body
         document.body.appendChild(chatContainer);
-
-        const sheet = new CSSStyleSheet();
-        sheet.replaceSync(styles);
-
-        const shadow = chatContainer.attachShadow({ mode: "open" })
-        shadow.adoptedStyleSheets = [sheet];
-        shadow.innerHTML = html
-        //chatContainer.innerHTML = html;
-
     }
 }
 
 Widget.render();
+
 
 
 
