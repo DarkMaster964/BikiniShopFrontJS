@@ -1,13 +1,5 @@
 const styles = `
 
-    #messageArea p {
-        all: revert;
-    }
-
-    .productDiv * {
-        color: white;
-    }
-
     img {
         max-width: 100%;
     }
@@ -168,6 +160,21 @@ const styles = `
         border: none;
     }
 
+    #messageArea p {
+        all: revert;
+    }
+
+    .productDiv * {
+        color: white;
+    }
+
+
+    .prodAiLogo
+    {
+        all: revert;
+        padding: 2px;
+    }
+
     .introductionParagraph {
         color: white;
         display: flex;
@@ -179,12 +186,6 @@ const styles = `
         margin: 0;
         font-weight: 360;
         text-align: justify;
-    }
-    
-    .prodAiLogo
-    {
-        all: revert;
-        padding: 2px;
     }
 
     .arrowContainer {
@@ -655,23 +656,19 @@ const html = `
 
 
 
+// Widget component
 class Widget {
     static render() {
-        // Create a container and attach a shadow root
+        // Append the styles to the head
+        const styleElement = document.createElement('style');
+        styleElement.textContent = styles;
+        document.head.appendChild(styleElement);
+
+        // Create a container and append the HTML
         const chatContainer = document.createElement('div');
         chatContainer.id = 'chatContainer';
         chatContainer.className = 'chatContainerBubble';
-        const shadowRoot = chatContainer.attachShadow({ mode: 'open' });
-
-        // Append the styles to the shadow root
-        const styleElement = document.createElement('style');
-        styleElement.textContent = styles;
-        shadowRoot.appendChild(styleElement);
-
-        // Append the HTML to the shadow root
-        const wrapper = document.createElement('div');
-        wrapper.innerHTML = html;
-        shadowRoot.appendChild(wrapper);
+        chatContainer.innerHTML = html;
 
         // Append the container to the body
         document.body.appendChild(chatContainer);
@@ -679,7 +676,6 @@ class Widget {
 }
 
 Widget.render();
-
 
 
 
