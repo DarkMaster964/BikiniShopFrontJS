@@ -1,5 +1,13 @@
 const styles = `
 
+    #messageArea p {
+        all: revert;
+    }
+
+    .productDiv * {
+        color: white;
+    }
+
     img {
         max-width: 100%;
     }
@@ -161,6 +169,7 @@ const styles = `
     }
 
     .introductionParagraph {
+        color: white;
         display: flex;
         justify-content: center;
         align-items: flex-start;
@@ -170,6 +179,12 @@ const styles = `
         margin: 0;
         font-weight: 360;
         text-align: justify;
+    }
+    
+    .prodAiLogo
+    {
+        all: revert;
+        padding: 2px;
     }
 
     .arrowContainer {
