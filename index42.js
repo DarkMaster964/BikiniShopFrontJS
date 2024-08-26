@@ -945,14 +945,64 @@ userInput.addEventListener('keypress', (e) => {
     }
 })
 
+async function addToCart(event) {
+    event.preventDefault(); // Prevent default button action
 
-function addToCart(event){
-    const source = event.currentTarget;
-    const cart = source.querySelector('.shoppingCartImage');
-    const check = source.querySelector('.confirmImage');
+    // Get the button that was clicked
+    const button = event.currentTarget;
 
-    cart.style.display = 'none';
-    check.style.display = 'block';
+    // Get the product URL from the product box (from the href in the productImageContainer)
+    const productUrl = button.closest('.productInfoDiv').previousElementSibling.querySelector('a').href;
+
+    try {
+        // Fetch the product page content
+        const response = await fetch(productUrl);
+        const text = await response.text();
+
+        // Parse the HTML content to extract product data
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, 'text/html');
+
+        // Extract necessary product data (assuming you know what to extract)
+        const productId = doc.querySelector('input[name="product_id"]').value;
+        const productPrice = doc.querySelector('.productPrice').textContent.trim();
+        const productName = doc.querySelector('.productName').textContent.trim();
+        const quantity = 1; // Default to 1, adjust as needed
+
+        // Assuming you need variant data, extract them similarly
+        const sizeVariant = doc.querySelector('.velicinavarijanta.selected') ? doc.querySelector('.velicinavarijanta.selected').getAttribute('data-id') : null;
+        const colorVariant = doc.querySelector('.bojavarijanta.selected') ? doc.querySelector('.bojavarijanta.selected').getAttribute('data-id') : null;
+        const shapeVariant = doc.querySelector('.oblikvarijanta.selected') ? doc.querySelector('.oblikvarijanta.selected').getAttribute('data-id') : null;
+
+        // Construct the request payload
+        const payload = {
+            id: productId,
+            quantity: quantity,
+            price: productPrice,
+            name: productName,
+            velicina: sizeVariant || 0,
+            boja: colorVariant || 0,
+            oblik: shapeVariant || 0,
+            type: 'add'
+        };
+
+        // Send the add-to-cart request
+        await fetch("https://bikini.co.rs/template/assets/ajax/card.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                "X-Requested-With": "XMLHttpRequest"
+            },
+            body: new URLSearchParams(payload).toString(),
+            credentials: "include"
+        });
+
+        // Provide feedback to the user (optional)
+        alert(`${productName} has been added to your cart.`);
+    } catch (error) {
+        console.error('Error adding product to cart:', error);
+        alert('Failed to add product to cart.');
+    }
 }
 
 
