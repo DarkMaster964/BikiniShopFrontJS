@@ -950,10 +950,12 @@ async function addToCart(event) {
 
     // Get the button that was clicked
     const button = event.currentTarget;
+    // Get the product box containing this button
+    const productBox = button.parentElement;
 
-    // Get the product URL from the product box (from the href in the productImageContainer)
-    const productUrl = button.closest('.productInfoDiv').previousElementSibling.querySelector('a').href;
-
+    // Get the product URL from the product box
+    const productUrl = productBox.querySelector('.productImageContainer a').href;
+    
     try {
         // Fetch the product page content
         const response = await fetch(productUrl);
@@ -963,16 +965,15 @@ async function addToCart(event) {
         const parser = new DOMParser();
         const doc = parser.parseFromString(text, 'text/html');
 
-        // Extract necessary product data (assuming you know what to extract)
-        const productId = doc.querySelector('input[name="product_id"]').value;
-        const productPrice = doc.querySelector('.productPrice').textContent.trim();
-        const productName = doc.querySelector('.productName').textContent.trim();
+        const productId = productUrl.split("/").slice(-2,-1)[0];
+        const productPrice = productBox.querySelector('.productPrice').textContent;
+        const productName = productBox.querySelector('.productName').textContent;
         const quantity = 1; // Default to 1, adjust as needed
 
-        // Assuming you need variant data, extract them similarly
-        const sizeVariant = doc.querySelector('.velicinavarijanta.selected') ? doc.querySelector('.velicinavarijanta.selected').getAttribute('data-id') : null;
-        const colorVariant = doc.querySelector('.bojavarijanta.selected') ? doc.querySelector('.bojavarijanta.selected').getAttribute('data-id') : null;
-        const shapeVariant = doc.querySelector('.oblikvarijanta.selected') ? doc.querySelector('.oblikvarijanta.selected').getAttribute('data-id') : null;
+
+        const sizeVariant = "m"
+        const colorVariant = "crna"
+        const shapeVariant = "0"
 
         // Construct the request payload
         const payload = {
