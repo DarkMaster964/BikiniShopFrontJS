@@ -14,6 +14,7 @@ const styles = `
         width: 12.5vw;
         height: 12.5vw;
         transition: ease-in-out 0.35s;
+        z-index: 10000000;
     }
 
     .chatContainerFull {
@@ -28,6 +29,8 @@ const styles = `
         transition: ease-in-out 0.1s;
         z-index: 10000000;
         font-size: min(1.75vw,5vh);
+        overflow-x: hidden;
+        z-index: 10000000;
     }
 
     .chatBubble {
@@ -171,8 +174,7 @@ const styles = `
     }
 
 
-    .prodAiLogo
-    {
+    .prodAiLogoWidget {
         all: revert;
         padding: 2px;
     }
@@ -404,7 +406,7 @@ const styles = `
         padding-right: 1.5%;
     }
 
-    .prodAiLogo {
+    .prodAiLogoWidget {
         width: 15%;
         padding-right: 15%;
 
@@ -450,12 +452,56 @@ const styles = `
     }
 
     @media (orientation: portrait)  {
+    
+        .productImage {
+            border-radius: 3vw;
+        }
+    
+        .prodAiLogoWidget {
+            width: 25%;
+            padding-right: 10%;
+        }
+        
+        .providedBy {
+            font-size: 0.9em;
+        }
+        
+        .responseDiv {
+            border-radius: 3vw;
+        }
+    
+        .responseDiv::before {
+            height: calc(100% - 4px);
+            width: calc(100% - 4px);
+            top: 2px;
+            left: 2px;
+            border-radius: 3vw;
+        }
+        
+        .chat {
+            background: linear-gradient(360deg, #272727 87.5%, #8D8D8D 100%);
+        }
+        
+        .botInfo {
+            height: 12.5vh;
+            width: 100%;
+            flex-direction: row;
+            display: flex;
+            align-items: center;
+            border-top-left-radius: inherit;
+            border-top-right-radius: inherit;
+            border-bottom: 1px solid white;
+        }
+        
+        .chatBackgroundGradient {
+            display: none;
+        }
 
         .purchaseButton {
             width: 25%;
             height: 9vw;
             background-color: #545454;
-            border-radius: 17px;
+            border-radius: 3vw;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -464,7 +510,14 @@ const styles = `
         }
 
         .chat, .botHeaderContainer, .headerGreeting, .introductionParagraph, .messageArea, .inputArea {
-            font-size: 0.861em; /* Adjust this value to increase text size */
+            font-size: 0.94em; /* Adjust this value to increase text size */
+        }
+        
+        @media (max-height: 675px) {
+            .chat, .botHeaderContainer, .headerGreeting, .introductionParagraph, .messageArea, .inputArea {
+                font-size: 0.82em; /* Adjust this value to increase text size */
+            }
+            
         }
 
         .messageArea {
@@ -475,14 +528,15 @@ const styles = `
             overflow-y: scroll;
             scroll-behavior: smooth;
             scrollbar-width: none;
-            margin-bottom: 40vw;
-            padding-top: 4%;
-            min-height: calc(82.5% - 14vw);
+            margin-bottom: 17.65vh;
+            padding-top: 1.25vh;
+            min-height: 70vh;
             box-sizing: border-box;
             font-weight: 200;
-            line-height: 1.5;
+            line-height: 1.25;
+            font-size: 1.1em;
         }
-
+        
 
         .chatContainerFull {
             top: 0;
@@ -499,6 +553,7 @@ const styles = `
             border-radius: 0; /* Maintain rounded edges */
             transition: ease-in-out 0.1s;
             z-index: 10000000;
+            overflow: hidden;
         }
 
         .chatWrapper {
@@ -510,6 +565,7 @@ const styles = `
             width: 100%;
             height: 100%;
             border-radius: 0;
+            // overflow: hidden;
         }
         
 
@@ -532,10 +588,10 @@ const styles = `
 
         .sendButton {
             position: absolute;
-            width: 10vw; /* Increase the size of the button */
-            height: 10vw; /* Maintain square aspect ratio */
-            bottom: 25px; /* Adjust this value to position it slightly above the bottom edge */
-            right: 25px; /* Adjust this value to position it slightly to the left of the right edge */
+            width: 12.5vw; /* Increase the size of the button */
+            height: 12.5vw; /* Maintain square aspect ratio */
+            bottom: 9.5vh; /* Adjust this value to position it slightly above the bottom edge */
+            right: 6.25vw; /* Adjust this value to position it slightly to the left of the right edge */
             margin: 0;
             cursor: pointer;
             display: flex;
@@ -548,6 +604,7 @@ const styles = `
 
         .sendImg {
             width: 70%; /* Adjust the size of the image inside the button */
+            transform: translate(-7.5%, 7.5%);
         }
 
         .inputArea {
@@ -557,15 +614,17 @@ const styles = `
         }
 
         .inputDiv {
-            position: fixed;
-            height: auto;  /* Ensure the input div expands to fit content */
-            padding-bottom: 5px;  /* Add padding to create space above the send button */
-            bottom: 15px;
+            height: 17.5vh;  /* Ensure the input div expands to fit content */
+            padding-bottom: 2vh;
+            box-sizing: border-box;
         }
 
         .chatContainerBubble {
-            width: 18vw; /* Increase the width for mobile */
-            height: 18vw; /* Increase the height for mobile */
+            width: 25vw; /* Increase the width for mobile */
+            height: 25vw; /* Increase the height for mobile */
+            
+            bottom: 5vh;
+            right: 5vw;
         }
 
         .lenaCircle {
@@ -584,11 +643,19 @@ const styles = `
             height: 100%; /* Ensure the bubble takes the full height of the container */
             z-index: 10000000;
         }
+        
+        .productDiv {
+            border-radius: 3vw;
+        }
+        
+        .messageDiv {
+            border-radius: 3vw;
+        }
 
     }
 
-    body.keyboard {
-        height: calc(100% + 500px); /* add padding for keyboard */
+    .keyboard {
+        padding-bottom: 40vh; /* add padding for keyboard */
     }
 
 `;
@@ -645,7 +712,7 @@ const html = `
                     <textarea type="text" class="inputArea" placeholder="Upišite poruku..." id="userInput"></textarea>
                     <div class="manufacturer">
                         <div class="providedBy">Omogućeno sa</div>
-                        <img src="https://i.postimg.cc/8FXVhzfM/Prod-Ai-Logo.png" class="prodAiLogo">
+                        <img src="https://i.postimg.cc/8FXVhzfM/Prod-Ai-Logo.png" class="prodAiLogoWidget">
                     </div>
 
                     <button class="sendButton" id="sendButton">
@@ -678,6 +745,10 @@ class Widget {
         document.body.appendChild(chatContainer);
     }
 }
+
+// if ("virtualKeyboard" in navigator) {
+//     navigator.virtualKeyboard.overlaysContent = true;
+// }
 
 Widget.render();
 
@@ -809,12 +880,14 @@ function showChat() {
     chatContainer.className = "chatContainerFull";
     chatBubble.style.display = "none";
     chat.style.display = "flex";
+    document.body.style.overflow = 'hidden';
 }
 
 function hideChat() {
     chat.style.display = "none";
     chatContainer.className = "chatContainerBubble";
     chatBubble.style.display = "block";
+    document.body.style.overflow = 'auto';
 }
 
 
@@ -955,16 +1028,16 @@ async function addToCart(event) {
 
     // Get the product URL from the product box
     const productUrl = productBox.querySelector('.productImageContainer a').href;
+
+    //diplay checkmark.
+    const source = event.currentTarget;
+    const cart = source.querySelector('.shoppingCartImage');
+    const check = source.querySelector('.confirmImage');
+    cart.style.display = 'none';
+    check.style.display = 'block';
+
     
     try {
-        // Fetch the product page content
-        const response = await fetch(productUrl);
-        const text = await response.text();
-
-        // Parse the HTML content to extract product data
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(text, 'text/html');
-
         const productId = productUrl.split("/").slice(-2,-1)[0];
         const productPrice = productBox.querySelector('.productPrice').textContent;
         const productName = productBox.querySelector('.productName').textContent;
@@ -1098,11 +1171,3 @@ async function extractMetadata(url) {
 
 const inputDiv = document.querySelector('.inputDiv');
 const chatWrapper = document.querySelector('.chatWrapper');
-
-window.addEventListener('resize', () => {
-    if (window.innerHeight < screen.height) {
-        document.body.classList.add("keyboard");
-    } else {
-        document.body.classList.remove("keyboard");
-    }
-});
