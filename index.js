@@ -13,7 +13,7 @@ const styles = `
         right: 1vw;
         width: 12.5vw;
         height: 12.5vw;
-        transition: ease-in-out 0.35s;
+        transition: linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%) 0.35s;
         z-index: 10000000;
     }
 
@@ -328,7 +328,6 @@ const styles = `
 
     .purchaseButton {
         width: 25%;
-        height: 3vw;
         background-color: #545454;
         border-radius: 17px;
         display: flex;
@@ -336,6 +335,8 @@ const styles = `
         align-items: center;
         border: none;
         cursor: pointer;
+        padding-top: 5%;
+        padding-bottom: 5%;
     }
 
     .shoppingCartImage {
@@ -453,6 +454,8 @@ const styles = `
 
     @media (orientation: portrait)  {
     
+        
+    
         .productImage {
             border-radius: 3vw;
         }
@@ -483,7 +486,7 @@ const styles = `
         }
         
         .botInfo {
-            height: 12.5vh;
+            height: 12.5%;
             width: 100%;
             flex-direction: row;
             display: flex;
@@ -499,7 +502,6 @@ const styles = `
 
         .purchaseButton {
             width: 25%;
-            height: 9vw;
             background-color: #545454;
             border-radius: 3vw;
             display: flex;
@@ -508,9 +510,15 @@ const styles = `
             border: none;
             cursor: pointer;
         }
+        
+        
 
         .chat, .botHeaderContainer, .headerGreeting, .introductionParagraph, .messageArea, .inputArea {
-            font-size: 0.94em; /* Adjust this value to increase text size */
+            font-size: 0.9em; /* Adjust this value to increase text size */
+        }
+        
+        .botInfo {
+                font-size: 1em;
         }
         
         @media (max-height: 675px) {
@@ -518,6 +526,18 @@ const styles = `
                 font-size: 0.82em; /* Adjust this value to increase text size */
             }
             
+            .botInfo {
+                font-size: 1.2em;
+            }
+            
+        }
+        
+        @media (max-width: 470px) {
+            @media (max-height: 400px){ 
+                .botInfo {
+                    font-size: 1em;
+                }
+            }
         }
 
         .messageArea {
@@ -528,9 +548,9 @@ const styles = `
             overflow-y: scroll;
             scroll-behavior: smooth;
             scrollbar-width: none;
-            margin-bottom: 17.65vh;
-            padding-top: 1.25vh;
-            min-height: 70vh;
+            margin-bottom: 17.55dvh;
+            padding-top: 1.25%;
+            min-height: 70%;
             box-sizing: border-box;
             font-weight: 200;
             line-height: 1.25;
@@ -544,14 +564,14 @@ const styles = `
             justify-content: center;
             align-items: center;
             position: fixed;
-            width: 100vw; /* Adjust width for a near fullscreen effect */
-            height: 100vh; /* Adjust height for a near fullscreen effect */
+            width: 100%; /* Adjust width for a near fullscreen effect */
+            height: 100%; /* Adjust height for a near fullscreen effect */
             bottom: 0;  /* Center vertically with space around */
             right: 0; /* Center horizontally with space around */
             left: 0; /* Center horizontally with space around */
             font-size: min(4vw, 5vh);
             border-radius: 0; /* Maintain rounded edges */
-            transition: ease-in-out 0.1s;
+            transition: bottom ease-in-out 0.1s, right ease-in-out 0.1s;
             z-index: 10000000;
             overflow: hidden;
         }
@@ -588,8 +608,8 @@ const styles = `
 
         .sendButton {
             position: absolute;
-            width: 12.5vw; /* Increase the size of the button */
-            height: 12.5vw; /* Maintain square aspect ratio */
+            width: 5dvh; /* Increase the size of the button */
+            height: 5dvh; /* Maintain square aspect ratio */
             bottom: 9.5vh; /* Adjust this value to position it slightly above the bottom edge */
             right: 6.25vw; /* Adjust this value to position it slightly to the left of the right edge */
             margin: 0;
@@ -608,13 +628,13 @@ const styles = `
         }
 
         .inputArea {
-            height: 12vh;  /* Increase the height for better usability */
+            height: 12dvh;  /* Increase the height for better usability */
             font-size: max(16px, 0.9em);  /* Increase font size for better readability */
             padding: 8px;  /* Add padding to give more space inside the input box */
         }
 
         .inputDiv {
-            height: 17.5vh;  /* Ensure the input div expands to fit content */
+            height: 17.5dvh;  /* Ensure the input div expands to fit content */
             padding-bottom: 2vh;
             box-sizing: border-box;
         }
@@ -654,8 +674,91 @@ const styles = `
 
     }
 
-    .keyboard {
-        padding-bottom: 40vh; /* add padding for keyboard */
+    @media (orientation: landscape) {
+        @media (max-height: 500px) {
+            
+            .productDiv {
+                width: 45%;
+            }
+            
+            .chatBackgroundGradient {
+                display: none;
+            }
+            
+            .chatContainerFull {
+                width: 100%;
+                height: 100%;
+                bottom: 0;
+                right: 0;
+                font-size: 2em;
+            }
+            
+            .chatWrapper {
+                width: 100%;
+                height: 100%;
+            }
+            
+            .chat {
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+            }
+            
+            .onlineStatus {
+                width: 1.5%;
+                height: 1.5%;
+                left: 39%;
+                bottom: 0;
+            }
+            
+            .responseDiv {
+                margin-top: 2%;
+            }
+            
+            .messageDiv {
+                margin-top: 2%;
+            }
+            
+            .productInfoDiv {
+                font-size: 1.35em;
+            }
+            
+            
+            .messageArea {
+                margin-bottom: 22.5%;
+                min-height: 60%;
+                padding-top: 1.25%;
+                box-sizing: border-box;
+            }
+            
+            .botInfo {
+                height: 17.5%;
+            }
+            
+            .inputDiv {
+                height: 22.5%;
+            }
+            
+            .inputArea {
+                padding-top: 1%;
+            }
+            
+            .prodAiLogoWidget {
+                width: 10%;
+                padding-right: 7.5%;
+            }
+            
+            .sendButton {
+                width: 4.25dvw;
+                height: 4.25dvw;
+                right: 5dvw;
+                bottom: 10.75dvh;
+            }
+            
+            .waveEmoji {
+                font-size: 1em;
+            }
+        }
     }
 
 `;
@@ -1028,16 +1131,16 @@ async function addToCart(event) {
 
     // Get the product URL from the product box
     const productUrl = productBox.querySelector('.productImageContainer a').href;
-
-    //diplay checkmark.
-    const source = event.currentTarget;
-    const cart = source.querySelector('.shoppingCartImage');
-    const check = source.querySelector('.confirmImage');
-    cart.style.display = 'none';
-    check.style.display = 'block';
-
     
     try {
+        // Fetch the product page content
+        const response = await fetch(productUrl);
+        const text = await response.text();
+
+        // Parse the HTML content to extract product data
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, 'text/html');
+
         const productId = productUrl.split("/").slice(-2,-1)[0];
         const productPrice = productBox.querySelector('.productPrice').textContent;
         const productName = productBox.querySelector('.productName').textContent;
