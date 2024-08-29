@@ -105,7 +105,7 @@ const styles = `
         border-top-right-radius: inherit;
         border-bottom: 1px solid white;
     }
-
+    
     .lenaImageDiv {
         position: relative;
         height: 100%;
@@ -255,6 +255,10 @@ const styles = `
         border: 0;
         border-radius: 1vw;
         z-index: 1;
+        
+        word-wrap: break-word; /* Ensures long words break */
+        overflow-wrap: break-word; /* The new standard for word-wrap */
+        
     }
 
     .responseDiv::before {
@@ -575,19 +579,6 @@ const styles = `
             transition: bottom ease-in-out 0.1s, right ease-in-out 0.1s;
             z-index: 10000000;
             overflow: hidden;
-        }
-        
-        
-        @media (min-width: 500px) {
-            .chatContainerFull {
-                font-size: 0.5em;
-            }
-        }
-        
-        @media (min-width: 600px) {
-            .chatContainerFull {
-                font-size: 0.45em;
-            }
         }
     
 
@@ -943,9 +934,20 @@ lenaCircle.addEventListener("load", async (e) => {
 
                 responseDiv.className = "responseDiv";
 
+
                 const prodLinkRemovalPattern = /"https?:\/\/bikini\.co\.rs\/product\/[^"]*"/g;
-                responseDiv.innerHTML = msg.content.replaceAll("<br>", "").replace(prodLinkRemovalPattern, '');
-                waiting = false;
+                const linkPattern = /"\(https?:\/\/bikini\.co\.rs\/[^\/]*\/[^"]*\)"/g
+                let clearedText = msg.content.replaceAll("<br>", "").replace(prodLinkRemovalPattern, '');
+
+                const regexp = /"?(https?:\/\/[^\s<"]+)"?/g;
+                const links = clearedText.matchAll(regexp);
+
+                for (const match of links) {
+                    const link = (match[0][0] === "\""? match[0].slice(1, match[0].length - 1) : match[0]);
+                    clearedText = clearedText.replace(match[0], `<a onclick="window.open('${link}', '_blank')" style="text-decoration: underline; color: lightgray">${link}</a>`);
+                }
+
+                responseDiv.innerHTML = clearedText;
                 removeEmptyElements(responseDiv)
                 chatArea.append(responseDiv);
 
@@ -982,10 +984,20 @@ lenaCircle.addEventListener("load", async (e) => {
         const recmore = (await ress.json()).response;
         stopLoading(responseMoreDiv)
         const prodLinkRemovalPattern = /"https?:\/\/bikini\.co\.rs\/product\/[^"]*"/g;
-        responseMoreDiv.innerHTML = recmore.replace(prodLinkRemovalPattern, '');
+
+        let clearedText = recmore.text.replace(prodLinkRemovalPattern, '');
+
+        const links = clearedText.matchAll(regexp);
+
+        for (const match of links) {
+            const link = (match[0][0] === "\""? match[0].slice(1, match[0].length - 1) : match[0]);
+            clearedText = clearedText.replace(match[0], `<a onclick="window.open('${link}', '_blank')" style="text-decoration: underline; color: lightgray">${link}</a>`);
+        }
+
+        responseMoreDiv.innerHTML = clearedText;
         removeEmptyElements(responseMoreDiv)
 
-        const matches = recmore.matchAll(regexp);
+        const matches = recmore.text.matchAll(regexp);
         for (const match of matches) {
             console.log(`Found ${match[0]} start=${match.index} end=${match.index + match[0].length}.`);
             if(match[0].includes("/product/")) await addProduct(match[0].slice(1,-1))
@@ -1116,9 +1128,22 @@ async function sendMessageAndUpdateChat(){
 
     stopLoading();
 
-    const regexp = /"(https?:\/\/[^\s"]+)"/g;
+
+    // Je l mozes da mi preporucis neke stranice sa bloga
+
+    const regexp = /"?(https?:\/\/[^\s<"]+)"?/g;
     const prodLinkRemovalPattern = /"https?:\/\/bikini\.co\.rs\/product\/[^"]*"/g;
-    responseDiv.innerHTML = res.text.replace(prodLinkRemovalPattern, '');
+
+    let clearedText = res.text.replace(prodLinkRemovalPattern, '');
+
+    const links = clearedText.matchAll(regexp);
+
+    for (const match of links) {
+        const link = (match[0][0] === "\""? match[0].slice(1, match[0].length - 1) : match[0]);
+        clearedText = clearedText.replace(match[0], `<a onclick="window.open('${link}', '_blank')" style="text-decoration: underline; color: lightgray">${link}</a>`);
+    }
+
+    responseDiv.innerHTML = clearedText;
     removeEmptyElements(responseDiv)
     waiting = false;
 
