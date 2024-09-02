@@ -825,7 +825,7 @@ const html = `
                     <textarea type="text" class="inputArea" placeholder="Upišite poruku..." id="userInput"></textarea>
                     <div class="manufacturer">
                         <div class="providedBy">Omogućeno sa</div>
-                        <img src="https://i.postimg.cc/8FXVhzfM/Prod-Ai-Logo.png" class="prodAiLogoWidget" onclick="window.location.href='https://external-website.com';">
+                        <img src="https://i.postimg.cc/8FXVhzfM/Prod-Ai-Logo.png" class="prodAiLogoWidget" onclick="window.location.href='https://prod-ai.com';">
                     </div>
 
                     <button class="sendButton" id="sendButton">
