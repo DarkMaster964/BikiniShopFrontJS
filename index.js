@@ -30,7 +30,7 @@ const styles = `
         z-index: 10000000;
         font-size: min(1.75vw,5vh);
         overflow-x: hidden;
-        z-index: 10000000;
+        z-index: 1000000000;
     }
 
     .chatBubble {
@@ -825,7 +825,9 @@ const html = `
                     <textarea type="text" class="inputArea" placeholder="Upišite poruku..." id="userInput"></textarea>
                     <div class="manufacturer">
                         <div class="providedBy">Omogućeno sa</div>
-                        <img src="https://i.postimg.cc/8FXVhzfM/Prod-Ai-Logo.png" class="prodAiLogoWidget">
+                        <a href="https://prod-ai.com/">
+                            <img src="https://i.postimg.cc/8FXVhzfM/Prod-Ai-Logo.png" class="prodAiLogoWidget">
+                        </a>
                     </div>
 
                     <button class="sendButton" id="sendButton">
