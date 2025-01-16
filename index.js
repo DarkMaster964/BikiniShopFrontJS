@@ -777,19 +777,19 @@ const styles = `
 const html = `
 
         <div class="chatBubble" id="chatBubble">
-            <img src="https://i.postimg.cc/0NptLF4d/Circle-Linear-Gradient.png" class="circleGradient">
-            <img src="https://i.postimg.cc/Y4DNz6C8/Black-Circle.png" class="blackCircle" id="blackCircle">
-            <img src="https://i.postimg.cc/Jsq5GVwf/Lena-Circle.png" class="lenaCircle" id="lenaCircle">
+            <img src="https://storage.googleapis.com/prodai-images/Circle-Linear-Gradient.png" class="circleGradient">
+            <img src="https://storage.googleapis.com/prodai-images/Black-Circle.png" class="blackCircle" id="blackCircle">
+            <img src="https://storage.googleapis.com/prodai-images/Lena-Circle.png" class="lenaCircle" id="lenaCircle">
         </div>
 
         <div class="chatWrapper" id="chatWrapper">
 
-            <img src="https://i.postimg.cc/mZddfQmq/Chat-Gradient.png" class="chatBackgroundGradient">
+            <img src="https://storage.googleapis.com/prodai-images/Chat-Gradient.png class="chatBackgroundGradient">
             <div class="chat">
                 <div class="botInfo">
 
                     <div class="lenaImageDiv">
-                        <img src="https://i.postimg.cc/ZvpttP7x/LenaRectangle.png" class="lenaChatImage">
+                        <img src="https://storage.googleapis.com/prodai-images/Lena-Rectangle.png" class="lenaChatImage">
                         <div class="onlineStatus"></div>
                     </div>
 
@@ -801,7 +801,7 @@ const html = `
                     </div>
 
                     <div class="arrowContainer" id="arrowContainer">
-                        <img src="https://i.postimg.cc/0zfvyf8t/Arrow-Down.png" class="arrowDown">
+                        <img src="https://storage.googleapis.com/prodai-images/Arrow-Down.png" class="arrowDown">
                     </div>
                 </div>
 
@@ -825,11 +825,11 @@ const html = `
                     <textarea type="text" class="inputArea" placeholder="Upišite poruku..." id="userInput"></textarea>
                     <div class="manufacturer">
                         <div class="providedBy">Omogućeno sa</div>
-                        <img src="https://i.postimg.cc/8FXVhzfM/Prod-Ai-Logo.png" class="prodAiLogoWidget" onclick="window.location.href='https://prod-ai.com';">
+                        <img src="https://storage.googleapis.com/prodai-images/ProdAi-Logo.png" class="prodAiLogoWidget" onclick="window.location.href='https://prod-ai.com';">
                     </div>
 
                     <button class="sendButton" id="sendButton">
-                        <img src="https://i.postimg.cc/N9yvbvRV/SendImg.png" class="sendImg">
+                        <img src="https://storage.googleapis.com/prodai-images/SendImg.png" class="sendImg">
                     </button>
                 </div>
             </div>
